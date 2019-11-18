@@ -11,18 +11,27 @@ using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using DILesson.Services;
 
+
+// DependencyInjections внедрение зависимостей
+
 namespace DILesson.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ServiceController : ControllerBase
     {
+        private readonly IEntitySaverService entitySaverService;
+
+        public ServiceController(IEntitySaverService entitySaverService)
+        {
+            this.entitySaverService = entitySaverService;
+        }
 
         [HttpPost]
         public async Task<IActionResult> SaveEntity(EntityDTO entity)
         {
-            var entitySaver = new EntitySaverService();
-            await entitySaver.SaveEntity(entity);
+            //var entitySaver = new EntitySaverService();
+            await entitySaverService.SaveEntity(entity);
             return Ok();
         }
 
@@ -43,6 +52,7 @@ namespace DILesson.Controllers
             var smsSender = new SmsSenderService();
 
             await smsSender.SendAsync(phoneNumber);
+         
             return Ok();
         }
     }

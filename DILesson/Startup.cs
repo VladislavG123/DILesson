@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DILesson.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,13 @@ namespace DILesson
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IEntitySaverService, EntitySaverService>(); // на каждый конструктор
+
+            services.AddSingleton<IEntitySaverService, EntitySaverService>(); // 1 объект на всех
+
+            services.AddScoped<IEntitySaverService, EntitySaverService>(); // 1 объект на всех, до того пока он не станет нужным
+
+
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 

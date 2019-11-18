@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DILesson.Services
 {
-    public class EntitySaverService
+    public class EntitySaverService : IEntitySaverService
     {
         public Task SaveEntity(EntityDTO entity)
         {
