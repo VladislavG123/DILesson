@@ -107,3 +107,9 @@ C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0
 C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\гороховв\source\repos\DILesson\DILesson\bin\Debug\netcoreapp3.0\Twilio.dll
+C:\Users\гороховв\source\repos\DILesson\DILesson\obj\Debug\netcoreapp3.0\DILesson.MvcApplicationPartsAssemblyInfo.cache

@@ -12,14 +12,14 @@ namespace DILesson.Services
 
         public Task SendAsync(string phoneNumber)
         {
-            const string accountSid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-            const string authToken = "your_auth_token";
+            const string accountSid = "ACa902f79f4063bfa4e4da8b2930f931b2";
+            const string authToken = "55ce5d687fbdf981f550141835655fbf";
 
             TwilioClient.Init(accountSid, authToken);
 
             return MessageResource.CreateAsync(
                 body: "Join Earth's mightiest heroes. Like Kevin Bacon.",
-                from: new Twilio.Types.PhoneNumber("+15017122661"),
+                from: new Twilio.Types.PhoneNumber("+12056198687"),
                 to: new Twilio.Types.PhoneNumber(phoneNumber)
             );
         }

@@ -45,6 +45,16 @@ namespace DILesson.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetCodeVerefication()
+        {
+            var smsSender = new SmsSenderService();
+
+            await smsSender.SendAsync("87073035370");
+
+            return Ok();
+        }
+        // /api/Service/GetCodeVerefication
 
         [HttpGet("{phoneNumber}")]
         public async Task<IActionResult> GetCodeVerefication(string phoneNumber)
