@@ -8548,26 +8548,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\гороховв\\.nuget\\packages\\": {}
+    "C:\\Users\\Vlad\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\гороховв\\source\\repos\\DILesson\\DILesson\\DILesson.csproj",
+      "projectUniqueName": "C:\\Users\\Vlad\\Source\\Repos\\DILesson\\DILesson\\DILesson.csproj",
       "projectName": "DILesson",
-      "projectPath": "C:\\Users\\гороховв\\source\\repos\\DILesson\\DILesson\\DILesson.csproj",
-      "packagesPath": "C:\\Users\\гороховв\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\гороховв\\source\\repos\\DILesson\\DILesson\\obj\\",
+      "projectPath": "C:\\Users\\Vlad\\Source\\Repos\\DILesson\\DILesson\\DILesson.csproj",
+      "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vlad\\Source\\Repos\\DILesson\\DILesson\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\гороховв\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.timpotze.nl/api/v2/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

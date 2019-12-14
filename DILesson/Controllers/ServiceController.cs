@@ -21,13 +21,17 @@ namespace DILesson.Controllers
     public class ServiceController : ControllerBase
     {
         private readonly IEntitySaverService entitySaverService;
+        private readonly SmsSenderService smsSenderService;
+        private readonly EmailSenderService emailSenderService;
 
-        public ServiceController(IEntitySaverService entitySaverService)
+        public ServiceController(IEntitySaverService entitySaverService, SmsSenderService smsSenderService, EmailSenderService emailSenderService)
         {
             this.entitySaverService = entitySaverService;
+            this.smsSenderService = smsSenderService;
+            this.emailSenderService = emailSenderService;
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> SaveEntity(EntityDTO entity)
         {
             //var entitySaver = new EntitySaverService();
@@ -38,30 +42,18 @@ namespace DILesson.Controllers
         [HttpPost]
         public async Task<IActionResult> SendEmail(EmailMessageDTO emailMessage)
         {
-            var emailSender = new EmailSenderService();
-
-            await emailSender.SendAsync(emailMessage);
+            await emailSenderService.SendAsync(emailMessage);
 
             return Ok();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetCodeVerefication()
-        {
-            var smsSender = new SmsSenderService();
-
-            await smsSender.SendAsync("87073035370");
-
-            return Ok();
-        }
+       
         // /api/Service/GetCodeVerefication
 
-        [HttpGet("{phoneNumber}")]
+        [HttpGet/*("{phoneNumber}")*/]
         public async Task<IActionResult> GetCodeVerefication(string phoneNumber)
         {
-            var smsSender = new SmsSenderService();
-
-            await smsSender.SendAsync(phoneNumber);
+            await smsSenderService.SendAsync(phoneNumber);
          
             return Ok();
         }

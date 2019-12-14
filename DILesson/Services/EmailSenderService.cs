@@ -11,11 +11,21 @@ namespace DILesson.Services
     {
         public Task SendAsync(EmailMessageDTO emailMessage)
         {
-            using (SmtpClient client = new SmtpClient("smpt.mail.ru", 457))
-            {
-                // еще что-то
-                return client.SendMailAsync("admin@mail.ru", emailMessage.To, emailMessage.Title, emailMessage.Text);
-            }
+            MailMessage mail = new MailMessage();
+            SmtpClient smtpServer = new SmtpClient("smtp.mail.ru");
+
+            mail.From = new MailAddress("gvo_step2018@mail.ru");
+            mail.To.Add(emailMessage.To);
+            mail.Subject = emailMessage.Title;
+            mail.Body = emailMessage.Text;
+
+            smtpServer.Port = 465;
+            smtpServer.Credentials = new System.Net.NetworkCredential("gvo_step2018@mail.ru", "8W8_55Vlad");
+            smtpServer.EnableSsl = true;
+
+            smtpServer.SendMailAsync(mail);
+
+            return Task.CompletedTask;
         }
     }
 }

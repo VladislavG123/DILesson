@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
@@ -12,16 +13,19 @@ namespace DILesson.Services
 
         public Task SendAsync(string phoneNumber)
         {
-            const string accountSid = "ACa902f79f4063bfa4e4da8b2930f931b2";
-            const string authToken = "55ce5d687fbdf981f550141835655fbf";
+            var code = new Random().Next(1000, 9999);
 
-            TwilioClient.Init(accountSid, authToken);
+            phoneNumber.TrimStart('+');
+            string url = $"https://api.mobizon.kz/service/message/sendsmsmessage?" +
+                $"recipient={phoneNumber}&text=Code: {code}" +
+                $"&apiKey=kz739b92e1907f9680a0b71e3851ab59dcec2c26af77d8ee39876b18483fa5b232126f";
 
-            return MessageResource.CreateAsync(
-                body: "Join Earth's mightiest heroes. Like Kevin Bacon.",
-                from: new Twilio.Types.PhoneNumber("+12056198687"),
-                to: new Twilio.Types.PhoneNumber(phoneNumber)
-            );
+            using (var webClient = new WebClient())
+            {
+                webClient.DownloadString(new System.Uri(url));
+            }
+
+            return Task.CompletedTask;
         }
 
     }

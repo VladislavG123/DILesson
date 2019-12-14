@@ -28,10 +28,13 @@ namespace DILesson
         {
             services.AddTransient<IEntitySaverService, EntitySaverService>(); // на каждый конструктор
 
-            services.AddSingleton<IEntitySaverService, EntitySaverService>(); // 1 объект на всех
+            //  services.AddSingleton<IEntitySaverService, EntitySaverService>(); // 1 объект на всех
 
-            services.AddScoped<IEntitySaverService, EntitySaverService>(); // 1 объект на всех, до того пока он не станет нужным
+            // services.AddScoped<IEntitySaverService, EntitySaverService>(); // 1 объект на всех, до того пока он не станет нужным
 
+            services.AddTransient<SmsSenderService>();
+            
+            services.AddTransient<EmailSenderService>();
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
